@@ -1,14 +1,14 @@
 import { useState } from 'react';
-import './App.css';
-import { Form } from './components';
+import './App.scss';
+import { Form, Joke } from './components';
 
 function App() {
   const [colectedData, setColectedData] = useState({
     name: '',
     type: '',
-    count: 0,
+    count: null,
   });
-  const [jokesData, setJokesData] = useState({});
+  const [jokesData, setJokesData] = useState([]);
 
   const fetchData = async (type) => {
     const resp = await fetch(`https://official-joke-api.appspot.com/jokes/${type}/ten`)
@@ -23,10 +23,19 @@ function App() {
   };
 
   return (
-    <>
-      <p>{colectedData.name}</p>
-      <Form onSubmitData={handleSendData} />
-    </>
+    <div className="app">
+      {jokesData.length > 0 ? (
+          <div className="app__jokes-container">
+            <p>{colectedData.name}</p>
+            {jokesData.slice(0, colectedData.count).map( item => <Joke key={item.id} joke={item} />)}
+          </div>
+        ) : (
+          <div className="app__form-container">
+            <Form onSubmitData={handleSendData} />
+          </div>
+        )
+      }
+    </div>
   )
 }
 
