@@ -4,10 +4,10 @@ import './form.scss';
 
 const TYPES = ['general', 'dad', 'knock-knock', 'programming'];
 
-export const Form = ({onSubmitData}) => {
+export const Form = ({ onSubmitData }) => {
   const [formData, setFormData] = useState({
     name: '',
-    type: 'general',
+    type: '',
     count: 0,
   })
 
