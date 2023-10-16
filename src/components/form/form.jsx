@@ -25,12 +25,21 @@ export const Form = ({ onSubmitData }) => {
     <form className="form" onSubmit={handleSubmit}>
       <label className="form__label">
         Name
-        <input required onChange={(e) => setFormData({...formData, name: e.target.value})}/>
+        <input
+          name='name'
+          onChange={(e) => setFormData({...formData, name: e.target.value})}
+          required
+        />
       </label>
 
       <label className="form__label">
         Select type of Jokes
-        <select className="form__select" required onChange={(e) => setFormData({...formData, type: e.target.value})}>
+        <select
+          className="form__select"
+          name='name'
+          onChange={(e) => setFormData({...formData, type: e.target.value})}
+          required
+        >
           <option value="">Select one</option>
           {TYPES.map(item => <option key={item} value={item}>{item}</option>)}
         </select>
@@ -38,7 +47,12 @@ export const Form = ({ onSubmitData }) => {
 
       <label className="form__label">
         Select count of Jokes
-        <select className="form__select" required onChange={(e) => setFormData({...formData, count: e.target.value})}>
+        <select
+          className="form__select"
+          name='name'
+          onChange={(e) => setFormData({...formData, count: e.target.value})}
+          required
+        >
           <option value="">Select one</option>
           {options.map(item => <option key={item} value={item}>{item}</option>)}
         </select>

@@ -15,7 +15,10 @@ function App() {
 
   const generateJokesData = (type, count, source) => {
     const data = [...source];
-    setJokesData(data.filter(item => item.type === type).map((item, index) => ({...item, 'id': index})).slice(0, count));
+    setJokesData(data
+      .filter(item => item.type === type)
+      .map((item, index) => ({...item, 'id': index}))
+      .slice(0, count));
   };
 
   const handleSendData = (data) => {
