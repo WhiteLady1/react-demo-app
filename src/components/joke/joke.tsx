@@ -1,8 +1,17 @@
-/* eslint-disable react/prop-types */
 import { HandThumbUpIcon, HandThumbDownIcon } from '@heroicons/react/24/outline';
 import './joke.scss';
 
-export const Joke = ({ setup, punchline, showRating }) => (
+interface JokeProsp {
+  setup: string;
+  punchline: string;
+  showRating?: boolean;
+};
+
+export const Joke: React.FC<JokeProsp> = ({
+  setup,
+  punchline,
+  showRating = false
+}) => (
   <div className="joke">
     <div className="joke__body">
       <p className="joke__body__setup">{setup}</p>

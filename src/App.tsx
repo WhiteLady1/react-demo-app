@@ -1,20 +1,20 @@
 import { useState } from 'react';
-import './App.scss';
-import { Form, Joke } from './components';
+import { Form, FormDataInterface, Joke } from './components';
 import { ArrowUturnLeftIcon } from '@heroicons/react/24/outline';
-import sourceOfJokes from './source/jokes-data';
+import sourceOfJokes, { JokesDataInterface } from './source/jokes-data';
+import './App.scss';
 
 function App() {
-  const [userName, setUserName] = useState();
-  const [jokesData, setJokesData] = useState([]);
+  const [userName, setUserName] = useState<string>();
+  const [jokesData, setJokesData] = useState<JokesDataInterface[]>([]);
 
-  // const fetchData = async (type, count) => {
+  // const fetchData = async (type: string, count: number) => {
   //   const resp = await fetch(`https://official-joke-api.appspot.com/jokes/${type}/ten`)
   //   const data = await resp.json();
   //   setJokesData(data.slice(0, count));
   // };
 
-  const generateJokesData = (type, count, source) => {
+  const generateJokesData = (type: string, count: number, source: JokesDataInterface[]) => {
     const data = [...source];
     setJokesData(data
       .filter(item => item.type === type)
@@ -22,11 +22,10 @@ function App() {
       .slice(0, count));
   };
 
-  const handleSendData = (data) => {
+  const handleSendData = (data: FormDataInterface) => {
     setUserName(data.name);
     // fetchData(data.type, data.count);
     generateJokesData(data.type, data.count, sourceOfJokes);
-    console.log(data);
   };
 
   return (
@@ -35,7 +34,7 @@ function App() {
           <div className="app__container">
             <h2>{userName}</h2>
             <h3>There are jokes for you!</h3>
-            {jokesData.map((item) => <Joke key={item.id} setup={item.setup} punchline={item.punchline} />)}
+            {jokesData.map((item) => <Joke key={item.id} setup={item.setup} punchline={item.punchline} showRating />)}
             <span className='app__container__back-icon' onClick={() => setJokesData([])}><ArrowUturnLeftIcon /></span>
           </div>
         ) : (

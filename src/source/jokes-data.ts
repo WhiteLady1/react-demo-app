@@ -1,4 +1,11 @@
-const sourceOfJokes = [
+export interface JokesDataInterface {
+  id?: number;
+  type: string;
+  setup: string;
+  punchline: string;
+};
+
+const sourceOfJokes: JokesDataInterface[] = [
   {
     "type": "general",
     "setup": "What did the fish say when it hit the wall?",
