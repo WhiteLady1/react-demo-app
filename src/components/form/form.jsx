@@ -24,8 +24,9 @@ export const Form = ({ onSubmitData }) => {
   return (
     <form className="form" onSubmit={handleSubmit}>
       <label className="form__label">
-        Name
+        Your name
         <input
+          className="form__input"
           name='name'
           onChange={(e) => setFormData({...formData, name: e.target.value})}
           required
@@ -35,7 +36,7 @@ export const Form = ({ onSubmitData }) => {
       <label className="form__label">
         Select type of Jokes
         <select
-          className="form__select"
+          className="form__input"
           name='name'
           onChange={(e) => setFormData({...formData, type: e.target.value})}
           required
@@ -48,7 +49,7 @@ export const Form = ({ onSubmitData }) => {
       <label className="form__label">
         Select count of Jokes
         <select
-          className="form__select"
+          className="form__input"
           name='name'
           onChange={(e) => setFormData({...formData, count: e.target.value})}
           required

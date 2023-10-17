@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.scss';
 import { Form, Joke } from './components';
+import { ArrowUturnLeftIcon } from '@heroicons/react/24/outline';
 import sourceOfJokes from './source/jokes-data';
 
 function App() {
@@ -25,17 +26,22 @@ function App() {
     setUserName(data.name);
     // fetchData(data.type, data.count);
     generateJokesData(data.type, data.count, sourceOfJokes);
+    console.log(data);
   };
 
   return (
     <div className="app">
       {jokesData.length > 0 ? (
-          <div className="app__jokes-container">
-            <p>{userName}</p>
+          <div className="app__container">
+            <h2>{userName}</h2>
+            <h3>There are jokes for you!</h3>
             {jokesData.map((item) => <Joke key={item.id} setup={item.setup} punchline={item.punchline} />)}
+            <span className='app__container__back-icon' onClick={() => setJokesData([])}><ArrowUturnLeftIcon /></span>
           </div>
         ) : (
-          <div className="app__form-container">
+          <div className="app__container">
+            <h2>Welcome to jokes generator</h2>
+            <h3>Please fill the form:</h3>
             <Form onSubmitData={handleSendData} />
           </div>
         )
