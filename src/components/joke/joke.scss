@@ -1,9 +1,24 @@
-.joke {
-  margin: 15px;
+.joke{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-  & p {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: .875rem;
+  &__body {
+    margin: 15px;
+
+    & p {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: .875rem;
+    }
+
+    &__setup {
+      font-style: italic;
+    }
+  }
+
+  &__rating {
+    display: flex;
+    gap: 5px;
   }
 }

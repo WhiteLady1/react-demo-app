@@ -1,11 +1,27 @@
 .app {
   display: flex;
-  justify-content: center;
-  max-width: 1280px;
-  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background: rgb(255,255,255);
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(172,228,235,1) 100%);
+
+  &__greetings {
+    font-size: x-large;
+    margin-bottom: 30px;
+  };
+
+  &__jokes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
-.jokes-container {
-  display: flex;
-  gap: 10px;
-}
+// background: #ace4eb

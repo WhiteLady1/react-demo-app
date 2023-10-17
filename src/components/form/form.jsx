@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
 import './form.scss';
+import { Input, Select } from '@nextui-org/react';
 
 const TYPES = ['general', 'dad', 'knock-knock', 'programming'];
 
@@ -23,14 +24,13 @@ export const Form = ({ onSubmitData }) => {
 
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <label className="form__label">
-        Name
-        <input
-          name='name'
-          onChange={(e) => setFormData({...formData, name: e.target.value})}
-          required
-        />
-      </label>
+      <Input
+        type="type"
+        name="name"
+        label="Name"
+        onChange={(e) => setFormData({...formData, name: e.target.value})}
+        required
+      />
 
       <label className="form__label">
         Select type of Jokes
@@ -44,6 +44,9 @@ export const Form = ({ onSubmitData }) => {
           {TYPES.map(item => <option key={item} value={item}>{item}</option>)}
         </select>
       </label>
+      <Select label="Select type">
+        
+      </Select>
 
       <label className="form__label">
         Select count of Jokes

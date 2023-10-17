@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import './App.scss';
 import { Form, Joke } from './components';
 import sourceOfJokes from './source/jokes-data';
+import './App.scss';
+import { ScrollShadow } from '@nextui-org/react';
 
 function App() {
   const [userName, setUserName] = useState();
@@ -29,11 +30,15 @@ function App() {
 
   return (
     <div className="app">
+      {userName && (
+        <p className="app__greetings">{userName}</p>
+      )}
       {jokesData.length > 0 ? (
+        <ScrollShadow hideScrollBar>
           <div className="app__jokes-container">
-            <p>{userName}</p>
-            {jokesData.map((item) => <Joke key={item.id} setup={item.setup} punchline={item.punchline} />)}
+            {jokesData.map((item) => <Joke key={item.id} setup={item.setup} punchline={item.punchline} showRating />)}
           </div>
+        </ScrollShadow>
         ) : (
           <div className="app__form-container">
             <Form onSubmitData={handleSendData} />
