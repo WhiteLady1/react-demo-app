@@ -1,17 +1,22 @@
-/* eslint-disable react/prop-types */
 import { useState } from 'react';
 import './form.scss';
 
 const TYPES = ['general', 'dad', 'knock-knock', 'programming'];
 
+interface FormDataInterface {
+  name: string;
+  type: string;
+  count: number;
+};
+
 export const Form = ({ onSubmitData }) => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormDataInterface>({
     name: '',
     type: '',
     count: 0,
   })
 
-  const options = [];
+  const options: number[] = [];
   for (let i = 0; i < 10; i++) {
     options.push(i + 1);
   }
@@ -21,14 +26,18 @@ export const Form = ({ onSubmitData }) => {
     onSubmitData(formData);
   };
 
+  const handleChange = (e) => {
+    setFormData({...formData, [e.targe.name]: e.target.value});
+  };
+
   return (
-    <form className="form" onSubmit={handleSubmit}>
+    <form className="form" onSubmit={(e) => handleSubmit(e)}>
       <label className="form__label">
         Your name
         <input
           className="form__input"
           name='name'
-          onChange={(e) => setFormData({...formData, name: e.target.value})}
+          onChange={(e) => handleChange(e)}
           required
         />
       </label>
@@ -38,7 +47,7 @@ export const Form = ({ onSubmitData }) => {
         <select
           className="form__input"
           name='name'
-          onChange={(e) => setFormData({...formData, type: e.target.value})}
+          onChange={(e) => handleChange(e)}
           required
         >
           <option value="">Select one</option>
@@ -51,7 +60,7 @@ export const Form = ({ onSubmitData }) => {
         <select
           className="form__input"
           name='name'
-          onChange={(e) => setFormData({...formData, count: e.target.value})}
+          onChange={(e) => handleChange(e)}
           required
         >
           <option value="">Select one</option>

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { HandThumbUpIcon, HandThumbDownIcon } from '@heroicons/react/24/outline';
 import './joke.scss';
 

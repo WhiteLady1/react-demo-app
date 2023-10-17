@@ -26,7 +26,6 @@ function App() {
     setUserName(data.name);
     // fetchData(data.type, data.count);
     generateJokesData(data.type, data.count, sourceOfJokes);
-    console.log(data);
   };
 
   return (
@@ -35,7 +34,7 @@ function App() {
           <div className="app__container">
             <h2>{userName}</h2>
             <h3>There are jokes for you!</h3>
-            {jokesData.map((item) => <Joke key={item.id} setup={item.setup} punchline={item.punchline} />)}
+            {/* {jokesData.map((item) => <Joke key={item.id} setup={item.setup} punchline={item.punchline} />)} */}
             <span className='app__container__back-icon' onClick={() => setJokesData([])}><ArrowUturnLeftIcon /></span>
           </div>
         ) : (
