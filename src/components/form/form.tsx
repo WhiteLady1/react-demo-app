@@ -21,13 +21,13 @@ export const Form = ({ onSubmitData }) => {
     options.push(i + 1);
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     onSubmitData(formData);
   };
 
-  const handleChange = (e) => {
-    setFormData({...formData, [e.targe.name]: e.target.value});
+  const handleChange = (event) => {
+    setFormData({...formData, [event.targe.name]: event.target.value});
   };
 
   return (
