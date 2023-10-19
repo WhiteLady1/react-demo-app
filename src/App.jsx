@@ -26,7 +26,6 @@ function App() {
     setUserName(data.name);
     // fetchData(data.type, data.count);
     generateJokesData(data.type, data.count, sourceOfJokes);
-    console.log(data);
   };
 
   return (
