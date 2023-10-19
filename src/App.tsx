@@ -5,7 +5,7 @@ import { ArrowUturnLeftIcon } from '@heroicons/react/24/outline';
 import sourceOfJokes from './source/jokes-data';
 
 function App() {
-  const [userName, setUserName] = useState();
+  const [userName, setUserName] = useState<string>();
   const [jokesData, setJokesData] = useState([]);
 
   // const fetchData = async (type, count) => {
