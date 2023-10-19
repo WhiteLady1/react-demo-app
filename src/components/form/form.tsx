@@ -9,7 +9,7 @@ interface FormDataInterface {
   count: number;
 };
 
-export const Form = ({ onSubmitData }) => {
+export const Form: React.FC = ({ onSubmitData }) => {
   const [formData, setFormData] = useState<FormDataInterface>({
     name: '',
     type: '',
