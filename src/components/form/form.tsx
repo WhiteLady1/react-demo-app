@@ -46,7 +46,7 @@ export const Form = ({ onSubmitData }) => {
         Select type of Jokes
         <select
           className="form__input"
-          name='name'
+          name='type'
           onChange={(e) => handleChange(e)}
           required
         >
@@ -59,7 +59,7 @@ export const Form = ({ onSubmitData }) => {
         Select count of Jokes
         <select
           className="form__input"
-          name='name'
+          name='count'
           onChange={(e) => handleChange(e)}
           required
         >
