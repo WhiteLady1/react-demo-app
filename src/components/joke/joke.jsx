@@ -2,7 +2,7 @@
 import { HandThumbUpIcon, HandThumbDownIcon } from '@heroicons/react/24/outline';
 import './joke.scss';
 
-export const Joke = ({ setup, punchline, showRating }) => (
+export const Joke = ({ setup, punchline, showRating = false }) => (
   <div className="joke">
     <div className="joke__body">
       <p className="joke__body__setup">{setup}</p>
