@@ -33,10 +33,15 @@
     letter-spacing: 1px;
     border-radius: 8px;
     border: none;
-    transition: transform 200ms;
+    transition-property: transform, background-color;
+    transition-duration: 200ms;
 
     &:hover {
       cursor: pointer;
+      background-color: #3598ac;
+    }
+    
+    &:active {
       transform: scale(98%);
     }
   }
