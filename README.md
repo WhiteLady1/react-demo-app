@@ -1,8 +1,12 @@
-# React + Vite
+# React Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This demo was created for a lecture on Typescript&React for juniors. It is meant to demonstrate the implementation of Typescript in a React project. The different phases of the implementation can be found below, each phase has its own branch.
 
-Currently, two official plugins are available:
+## Branches
+### Typescript-Start
+### Typescript-Demo
+### Typescript-Final
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Source of data
+
+https://github.com/15Dkatz/official_joke_api/blob/master/jokes/index.json#L3
